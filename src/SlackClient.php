@@ -24,7 +24,6 @@ class SlackClient
         $this->guzzle = $guzzle;
     }
 
-
     /**
      * Send a slack message to the #channel or @username
      *
@@ -41,7 +40,7 @@ class SlackClient
         $this->guzzle->post(config('slack.web_hook'), [
             'json' => [
                 'text' => $message,
-                'place' => $channel
+                'channel' => $channel
             ]
         ]);
     }
