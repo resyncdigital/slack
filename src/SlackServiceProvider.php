@@ -24,7 +24,7 @@ class SlackServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/slack.php', 'slack'
+            __DIR__.'/../config/slack.php', 'slack'
         );
     }
 }
