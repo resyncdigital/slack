@@ -33,6 +33,10 @@ class SlackClient
      */
     public function send($channel, $message)
     {
+        if (! config('slack.enabled')) {
+            return true;
+        }
+
         if (! preg_match('/^[@#]/', $channel)) {
             throw new InvalidPlaceException("The channel must start with @ or #, \"{$channel}\" was given");
         }
